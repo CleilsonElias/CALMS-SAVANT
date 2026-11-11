@@ -1,6 +1,11 @@
 # CALMS-SAVANT Reference Implementation
 
-**Versão 0.1.0 - implementação executável de referência para pesquisa.**
+**Versão 0.1.1 - implementação executável de referência para pesquisa.**
+
+A revisão VAL foi auditada contra este código. O patch 0.1.1 corrige overflow
+com inibição positiva muito pequena, preservando a descida de perda e os tetos
+de ganho/rank. Veja [impacto e compatibilidade](docs/VAL_REVISION_IMPACT.md).
+Os benchmarks históricos 0.1.0 não são reatribuídos ao patch.
 
 Governança de consolidação paramétrica: um grafo de identidade explícito, transporte
 ótimo regularizado entre âncoras correspondentes, atenuação e rejeição de propostas,
