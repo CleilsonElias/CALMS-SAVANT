@@ -1,0 +1,1 @@
+{"behavior_reversed":true,"final_unobserved_output":[[0.0,0.0,0.0,-1.0947206994667575]],"frozen":false,"initial_unobserved_output":[[0.0,0.0,0.0,1.0]],"interpretation":"A finite trusted anchor set does not cover every behavioral change.","max_proposed_anchor_drift":0.0,"scenario":"unobserved_input_subspace","steps":100}

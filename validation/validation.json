@@ -1,0 +1,85 @@
+{
+  "benchmark": {
+    "epochs": 100,
+    "file": "benchmark_linear.json",
+    "is_paper_reproduction": false,
+    "seeds": 5,
+    "variants": 7
+  },
+  "commands": [
+    {
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 run_calms_savant.py demo --directory /tmp/calms-release-gdx7niec/demo",
+      "returncode": 0
+    },
+    {
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 run_calms_savant.py inspect /tmp/calms-release-gdx7niec/demo/state.json",
+      "returncode": 0
+    },
+    {
+      "command": "calms-savant inspect /tmp/calms-release-gdx7niec/demo/state.json",
+      "returncode": 0
+    },
+    {
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 examples/defensive_replay.py",
+      "returncode": 0
+    },
+    {
+      "command": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m compileall -q src examples scripts",
+      "returncode": 0
+    }
+  ],
+  "executed_at_utc": "2026-11-11T10:58:22.715726+00:00",
+  "not_executed": [
+    "real_transformer_training",
+    "original_PPP_Bench",
+    "HNSW_backend",
+    "remote_GitHub_CI",
+    "GPU_latency_or_memory_benchmark"
+  ],
+  "optional_integration": {
+    "hf_peft_trainer": "syntax_checked_not_executed",
+    "torch_guard": "syntax_checked_not_executed"
+  },
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "tests": {
+    "discovered": 42,
+    "errors": 0,
+    "failures": 0,
+    "passed": 40,
+    "skipped": [
+      {
+        "reason": "optional hnswlib not installed",
+        "test": "test_optional_hnsw_rebuilds_after_eviction (test_archive_replay.ArchiveTests.test_optional_hnsw_rebuilds_after_eviction)"
+      },
+      {
+        "reason": "optional torch not installed",
+        "test": "test_real_autograd_update_and_rejected_rollback (test_optional_torch.TorchGuardTests.test_real_autograd_update_and_rejected_rollback)"
+      }
+    ]
+  },
+  "version": "0.1.0",
+  "versions": {
+    "hnswlib": null,
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "peft": null,
+    "reportlab": "4.4.9",
+    "scipy": "1.17.0",
+    "torch": null,
+    "transformers": null
+  },
+  "packaging": {
+    "editable_install": "passed",
+    "wheel_build": "passed",
+    "pdf_render": "rendered_and_visually_reviewed",
+    "python_versions_executed": [
+      "3.12.14"
+    ],
+    "configured_ci_versions": [
+      "3.11",
+      "3.12",
+      "3.13"
+    ]
+  }
+}

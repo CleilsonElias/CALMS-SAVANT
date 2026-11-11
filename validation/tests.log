@@ -1,0 +1,47 @@
+test_adversarial_replay_cap_is_strict_even_for_small_batches (test_archive_replay.ArchiveTests.test_adversarial_replay_cap_is_strict_even_for_small_batches) ... ok
+test_capacity_and_time_decay (test_archive_replay.ArchiveTests.test_capacity_and_time_decay) ... ok
+test_normalized_nonaxis_vectors_survive_repeated_roundtrips (test_archive_replay.ArchiveTests.test_normalized_nonaxis_vectors_survive_repeated_roundtrips) ... ok
+test_optional_hnsw_rebuilds_after_eviction (test_archive_replay.ArchiveTests.test_optional_hnsw_rebuilds_after_eviction) ... skipped 'optional hnswlib not installed'
+test_query_scope_and_dimension (test_archive_replay.ArchiveTests.test_query_scope_and_dimension) ... ok
+test_redundancy_is_merged (test_archive_replay.ArchiveTests.test_redundancy_is_merged) ... ok
+test_roundtrip_preserves_nonchronological_storage_and_counts (test_archive_replay.ArchiveTests.test_roundtrip_preserves_nonchronological_storage_and_counts) ... ok
+test_accepted_updates_parameters_not_base (test_engine.EngineTests.test_accepted_updates_parameters_not_base) ... ok
+test_audit_is_scheduled_even_when_next_proposal_would_be_rejected (test_engine.EngineTests.test_audit_is_scheduled_even_when_next_proposal_would_be_rejected) ... ok
+test_checksum_and_shape_corruption_are_detected (test_engine.EngineTests.test_checksum_and_shape_corruption_are_detected) ... ok
+test_event_chain_hash_matches_content (test_engine.EngineTests.test_event_chain_hash_matches_content) ... ok
+test_historical_audit_restores_and_remains_frozen (test_engine.EngineTests.test_historical_audit_restores_and_remains_frozen) ... ok
+test_invalid_candidate_cannot_leave_partial_parameters (test_engine.EngineTests.test_invalid_candidate_cannot_leave_partial_parameters) ... ok
+test_nullspace_failure_is_preserved_not_hidden (test_engine.EngineTests.test_nullspace_failure_is_preserved_not_hidden) ... ok
+test_rejected_update_is_bitwise_unchanged_and_archived (test_engine.EngineTests.test_rejected_update_is_bitwise_unchanged_and_archived) ... ok
+test_save_restore_and_exact_continuation (test_engine.EngineTests.test_save_restore_and_exact_continuation) ... ok
+test_surrogate_is_reproducible_and_explicit (test_engine.EngineTests.test_surrogate_is_reproducible_and_explicit) ... ok
+test_identical_seeds_do_not_divide_by_zero (test_identity_consensus.ConsensusTests.test_identical_seeds_do_not_divide_by_zero) ... ok
+test_no_silent_semantic_matching (test_identity_consensus.ConsensusTests.test_no_silent_semantic_matching) ... ok
+test_paper_mean_std_can_keep_strict_minority_outlier (test_identity_consensus.ConsensusTests.test_paper_mean_std_can_keep_strict_minority_outlier) ... ok
+test_robust_heuristic_detects_this_example_without_claiming_a_theorem (test_identity_consensus.ConsensusTests.test_robust_heuristic_detects_this_example_without_claiming_a_theorem) ... ok
+test_zero_consensus_and_missing_majority_abstain (test_identity_consensus.ConsensusTests.test_zero_consensus_and_missing_majority_abstain) ... ok
+test_penalty_measures_each_sample_not_batch_argmax (test_identity_consensus.IdentityTests.test_penalty_measures_each_sample_not_batch_argmax) ... ok
+test_roundtrip_and_bipartite_centrality (test_identity_consensus.IdentityTests.test_roundtrip_and_bipartite_centrality) ... ok
+test_scope_and_unknown_nodes (test_identity_consensus.IdentityTests.test_scope_and_unknown_nodes) ... ok
+test_weights_and_curated_updates (test_identity_consensus.IdentityTests.test_weights_and_curated_updates) ... ok
+test_analytic_gradient_matches_finite_difference (test_lora.LoRATests.test_analytic_gradient_matches_finite_difference) ... ok
+test_attenuation_monotone_but_not_absolute_block (test_lora.LoRATests.test_attenuation_monotone_but_not_absolute_block) ... ok
+test_clip_and_zero_rate_are_exact (test_lora.LoRATests.test_clip_and_zero_rate_are_exact) ... ok
+test_invalid_states_and_configs_rejected (test_lora.LoRATests.test_invalid_states_and_configs_rejected) ... ok
+test_rank_budget_integer_and_inhibition (test_lora.LoRATests.test_rank_budget_integer_and_inhibition) ... ok
+test_training_improves_loss_and_keeps_base_frozen (test_lora.LoRATests.test_training_improves_loss_and_keeps_base_frozen) ... ok
+test_real_autograd_update_and_rejected_rollback (test_optional_torch.TorchGuardTests.test_real_autograd_update_and_rejected_rollback) ... skipped 'optional torch not installed'
+test_amplitude_only_changes_are_invisible (test_transport.TransportTests.test_amplitude_only_changes_are_invisible) ... ok
+test_cosine_normalized_range (test_transport.TransportTests.test_cosine_normalized_range) ... ok
+test_marginals_rectangular_and_finite (test_transport.TransportTests.test_marginals_rectangular_and_finite) ... ok
+test_matches_independent_exact_lp_in_small_epsilon_limit (test_transport.TransportTests.test_matches_independent_exact_lp_in_small_epsilon_limit) ... ok
+test_nonconvergence_is_not_a_safe_distance (test_transport.TransportTests.test_nonconvergence_is_not_a_safe_distance) ... ok
+test_permutation_cannot_hide_prompt_swaps (test_transport.TransportTests.test_permutation_cannot_hide_prompt_swaps) ... ok
+test_self_divergence_is_zero_but_transport_can_be_biased (test_transport.TransportTests.test_self_divergence_is_zero_but_transport_can_be_biased) ... ok
+test_singletons_have_known_metric_distance (test_transport.TransportTests.test_singletons_have_known_metric_distance) ... ok
+test_unknown_anchors_and_zero_vectors_rejected (test_transport.TransportTests.test_unknown_anchors_and_zero_vectors_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.877s
+
+OK (skipped=2)

@@ -1,0 +1,1 @@
+{"medoid_mad":{"accepted":[0,1],"certified_safe":false,"distances":[[0.0,0.0,1.0],[0.0,0.0,1.0],[1.0,1.0,0.0]],"rejected":[2],"scores":[0.0,0.0,1.0],"threshold":0.02},"paper_mean_std":{"accepted":[0,1,2],"certified_safe":false,"distances":[[0.0,0.0,1.0],[0.0,0.0,1.0],[1.0,1.0,0.0]],"rejected":[],"scores":[0.5,0.5,1.0],"threshold":1.1380711874576983}}
