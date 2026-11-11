@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "calms-savant-reference"
+version = "0.1.0"
+description = "Research reference for geometrically governed low-rank continual adaptation"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Cleilson Elias de Sousa"}]
+dependencies = ["numpy>=1.26,<3"]
+classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3", "Topic :: Scientific/Engineering :: Artificial Intelligence"]
+
+[project.optional-dependencies]
+hnsw = ["hnswlib>=0.8,<1"]
+transformers = ["torch>=2.3,<3", "transformers>=4.45,<6", "peft>=0.13,<1", "safetensors>=0.4,<1"]
+
+[project.scripts]
+calms-savant = "calms_savant.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

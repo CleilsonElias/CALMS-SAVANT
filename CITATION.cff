@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite this reference software separately from the source manuscript."
+title: "CALMS-SAVANT Reference Implementation"
+type: software
+version: 0.1.0
+date-released: '2026-11-11'
+authors:
+  - family-names: "de Sousa"
+    given-names: "Cleilson Elias"
+license: MIT
+abstract: "Research implementation of identity-guided geometric consolidation governance, low-rank adaptation, and synthetic falsification examples."
