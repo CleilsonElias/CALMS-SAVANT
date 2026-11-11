@@ -13,7 +13,12 @@ def allocate_ranks(inhibition, *, base_rank=16, budget=32, max_rank=16):
     values = {k: nonnegative(v, "inhibition") for k, v in sorted(inhibition.items())}
     if any(v == 0 or not k for k, v in values.items()):
         raise ValueError("positive inhibition and domain IDs required")
-    desired = {k: max(1, min(max_rank, int(math.floor(base_rank/v)))) for k, v in values.items()}
+    # A tiny positive inhibition may make the floating ratio +inf. Saturate
+    # before floor/int conversion so the advertised rank cap remains effective.
+    desired = {}
+    for key, value in values.items():
+        target = base_rank/value
+        desired[key] = max_rank if target >= max_rank else max(1, math.floor(target))
     result = {k: 1 for k in values}
     # Deterministic discrete allocation, never silently exceeds the rank budget.
     while sum(result.values()) < budget:
@@ -31,7 +36,11 @@ def stratum_gate(inhibition, *, beta=1.0, optional_gate=1.0):
     if inhibition == 0 or beta < 1 or optional_gate > 1:
         raise ValueError("invalid stratum gate")
     # Operational cap: lambda<1 must not amplify the update beyond the base LR.
-    return min(1.0, inhibition**(-beta))*optional_gate
+    # Apply the unit cap before exponentiation: lambda**(-beta) can overflow
+    # for valid positive lambda even though the capped result is exactly one.
+    if inhibition <= 1:
+        return optional_gate
+    return inhibition**(-beta)*optional_gate
 
 
 class LinearLoRA:
