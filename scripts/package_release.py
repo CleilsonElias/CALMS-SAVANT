@@ -16,7 +16,7 @@ def included(path, root):
 def main():
     root = Path(__file__).resolve().parents[1]
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default=str(root.parent/"output/CALMS_SAVANT_Reference_v0.1.0.zip"))
+    parser.add_argument("--output", default=str(root.parent/"output/CALMS_SAVANT_Reference_v0.1.1.zip"))
     args = parser.parse_args()
     output = Path(args.output).resolve()
     if output == root or root in output.parents:

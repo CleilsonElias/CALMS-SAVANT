@@ -57,7 +57,7 @@ def main():
         except importlib.metadata.PackageNotFoundError:
             versions[package] = None
     atomic_json(root/"validation/validation.json", {
-        "version": "0.1.0", "executed_at_utc": datetime.now(timezone.utc).isoformat(),
+        "version": "0.1.1", "executed_at_utc": datetime.now(timezone.utc).isoformat(),
         "python": platform.python_version(), "platform": platform.platform(), "versions": versions,
         "tests": {"discovered": result.testsRun, "passed": result.testsRun-len(result.skipped),
                   "skipped": [{"test": str(t), "reason": reason} for t, reason in result.skipped],
