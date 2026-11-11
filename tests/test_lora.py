@@ -61,6 +61,29 @@ class LoRATests(unittest.TestCase):
         self.assertGreater(a, b)
         self.assertGreater(b, 0)
 
+    def test_subnormal_inhibition_saturates_gate_before_power(self):
+        for inhibition in (float.fromhex('0x0.0000000000001p-1022'), 1e-320, 1e-200):
+            for beta in (1.0, 2.0, 1e308):
+                self.assertEqual(stratum_gate(inhibition, beta=beta, optional_gate=0.3), 0.3)
+
+    def test_subnormal_inhibition_respects_rank_cap_and_budget(self):
+        self.assertEqual(allocate_ranks({'tiny': 1e-320}, max_rank=8, budget=8), {'tiny': 8})
+        ranks = allocate_ranks({'tiny': 1e-320, 'ordinary': 2.0}, max_rank=8, budget=9)
+        self.assertLessEqual(sum(ranks.values()), 9)
+        self.assertTrue(all(isinstance(v, int) and 1 <= v <= 8 for v in ranks.values()))
+
+    def test_ordinary_gate_values_unchanged_and_zero_rejected(self):
+        for inhibition in (1e-4, 0.05, 0.5, 1.0, 2.0, 10.0, 1e4):
+            for beta in (1.0, 2.0, 10.0):
+                self.assertEqual(stratum_gate(inhibition, beta=beta, optional_gate=0.7),
+                                 min(1.0, inhibition**(-beta))*0.7)
+        with self.assertRaises(ValueError):
+            stratum_gate(0)
+
+    def test_large_inhibition_gate_underflow_stays_bounded(self):
+        self.assertEqual(stratum_gate(1e308, beta=1e308), 0.0)
+        self.assertEqual(allocate_ranks({'large': 1e308}, budget=8, max_rank=8), {'large': 1})
+
     def test_invalid_states_and_configs_rejected(self):
         with self.assertRaises(ValueError):
             RiskConfig(epsilon=0)
